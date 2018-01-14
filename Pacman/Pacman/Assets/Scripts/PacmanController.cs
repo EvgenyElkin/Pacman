@@ -40,6 +40,14 @@ namespace Assets.Scripts
             {
                 dir = Direction.Up;
             }
+			if (horizontalInput == 1)
+            {
+                dir = Direction.Right;
+            }
+            if (verticalInput == -1)
+            {
+                dir = Direction.Down;
+            }
 
             if (dir != Direction.None && _dir != dir)
             {
@@ -52,11 +60,32 @@ namespace Assets.Scripts
                     case Direction.Up:
                         _animator.SetTrigger("IsUp");
                         break;
+					case Direction.Right:
+                        _animator.SetTrigger("IsRight");
+                        break;
+					case Direction.Down:
+                        _animator.SetTrigger("IsDown");
+                        break;
                 }
+				
             }
-
-
-            //transform.position = Vector3.MoveTowards(transform.position, transform.position + Vector3.up, Speed * Time.deltaTime);
+			var directionVector = Vector3.zero;
+                switch (dir)
+                {
+                    case Direction.Left:
+                       directionVector = Vector3.left;
+                        break;
+                    case Direction.Up:
+                        directionVector = Vector3.up;
+                        break;
+					case Direction.Right:
+                        directionVector = Vector3.right;
+                        break;
+					case Direction.Down:
+                        directionVector = Vector3.down;
+                        break;
+                }
+            transform.position = Vector3.MoveTowards(transform.position, transform.position + directionVector, Speed * Time.deltaTime);
         }
     }
 }
