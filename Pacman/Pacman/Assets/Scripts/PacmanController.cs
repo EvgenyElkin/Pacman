@@ -70,21 +70,21 @@ namespace Assets.Scripts
 				
             }
 			var directionVector = Vector3.zero;
-                switch (dir)
-                {
-                    case Direction.Left:
-                       directionVector = Vector3.left;
-                        break;
-                    case Direction.Up:
-                        directionVector = Vector3.up;
-                        break;
-					case Direction.Right:
-                        directionVector = Vector3.right;
-                        break;
-					case Direction.Down:
-                        directionVector = Vector3.down;
-                        break;
-                }
+            switch (_dir)
+            {
+                case Direction.Left:
+                    directionVector = Vector3.left;
+                    break;
+                case Direction.Up:
+                    directionVector = Vector3.up;
+                    break;
+                case Direction.Right:
+                    directionVector = Vector3.right;
+                    break;
+                case Direction.Down:
+                    directionVector = Vector3.down;
+                    break;
+            }
             transform.position = Vector3.MoveTowards(transform.position, transform.position + directionVector, Speed * Time.deltaTime);
         }
     }
