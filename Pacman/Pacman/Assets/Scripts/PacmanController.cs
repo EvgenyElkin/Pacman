@@ -15,12 +15,14 @@ namespace Assets.Scripts
     {
         private bool CanMove = true;
 		private Direction _dir;
+		private Direction _nextDir;
         private Animator _animator;
 
         public void Start()
         {
             _dir = Direction.Right;
             _animator = GetComponent<Animator>();
+			_nextDir = Direction.None;
         }
 
         public float Speed;
@@ -36,13 +38,25 @@ namespace Assets.Scripts
 				}
 			}
 		}
-		
-        public void Update()
-        {
-            if(!CanMove)
+		private Direction GetReverseDirection(Direction dir)
+		{
+			switch(dir)
 			{
-				return;
+				case Direction.Up:
+					return Direction.Down;
+				case Direction.Down:
+					return Direction.Up;
+				case Direction.Right:
+					return Direction.Left;
+				case Direction.Left:
+					return Direction.Right;
+				case Direction.None:
+					return Direction.None;
 			}
+			return Direction.None;
+		}
+		private Direction GetDirectionFromInput()
+		{
 			var horizontalInput = Input.GetAxisRaw("Horizontal");
             var verticalInput = Input.GetAxisRaw("Vertical");
 
@@ -64,26 +78,49 @@ namespace Assets.Scripts
             {
                 dir = Direction.Down;
             }
+			return dir;
+		}
+        
+		public void ChangeDirection(Direction dir)
+		{
+			 _dir = dir;
+			switch (dir)
+			{
+				case Direction.Left:
+					_animator.SetTrigger("IsLeft");
+					break;
+				case Direction.Up:
+					_animator.SetTrigger("IsUp");
+					break;
+				case Direction.Right:
+					_animator.SetTrigger("IsRight");
+					break;
+				case Direction.Down:
+					_animator.SetTrigger("IsDown");
+					break;
+					
+			}
+		}
+		
+		public void Update()
+        {
+            if(!CanMove)
+			{
+				return;
+			}
+			var inputDir = GetDirectionFromInput();
 
-            if (dir != Direction.None && _dir != dir)
+            if (inputDir != Direction.None && _dir != inputDir)
             {
-                _dir = dir;
-                switch (dir)
-                {
-                    case Direction.Left:
-                        _animator.SetTrigger("IsLeft");
-                        break;
-                    case Direction.Up:
-                        _animator.SetTrigger("IsUp");
-                        break;
-					case Direction.Right:
-                        _animator.SetTrigger("IsRight");
-                        break;
-					case Direction.Down:
-                        _animator.SetTrigger("IsDown");
-                        break;
-                }
-				
+                var reverseDir = GetReverseDirection(_dir);
+				if(inputDir == reverseDir)
+				{
+					ChangeDirection(inputDir);
+				}
+				else
+				{
+					_nextDir = inputDir;
+				}
             }
 			var directionVector = Vector3.zero;
             switch (_dir)
