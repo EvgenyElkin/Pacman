@@ -2,7 +2,7 @@
 
 namespace Assets.Scripts
 {
-    public enum Direction
+	public enum Direction
     {
         Right,
         Left,
@@ -13,7 +13,8 @@ namespace Assets.Scripts
 
     public class PacmanController : MonoBehaviour
     {
-        private Direction _dir;
+        private bool CanMove = true;
+		private Direction _dir;
         private Animator _animator;
 
         public void Start()
@@ -24,10 +25,25 @@ namespace Assets.Scripts
 
         public float Speed;
         
-
+		public void OnTriggerEnter2D(Collider2D other)
+		{
+			if(other.tag == "Router")
+			{
+				var router = other.gameObject.GetComponent<RouterController>();
+				if(!router.CanMove(_dir))
+				{
+					CanMove = false;
+				}
+			}
+		}
+		
         public void Update()
         {
-            var horizontalInput = Input.GetAxisRaw("Horizontal");
+            if(!CanMove)
+			{
+				return;
+			}
+			var horizontalInput = Input.GetAxisRaw("Horizontal");
             var verticalInput = Input.GetAxisRaw("Vertical");
 
 
