@@ -88,6 +88,7 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaDirect: 0.5
     m_PVRFilteringAtrousPositionSigmaIndirect: 2
     m_PVRFilteringAtrousPositionSigmaAO: 1
+    m_ShowResolutionOverlay: 1
   m_LightingDataAsset: {fileID: 0}
   m_UseShadowmask: 1
 --- !u!196 &4
@@ -112,53 +113,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1001 &457129012
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4956594009322858, guid: 752ac9eefbbdce4478945949b7e69678, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: -1.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4956594009322858, guid: 752ac9eefbbdce4478945949b7e69678, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: -0.65
-      objectReference: {fileID: 0}
-    - target: {fileID: 4956594009322858, guid: 752ac9eefbbdce4478945949b7e69678, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4956594009322858, guid: 752ac9eefbbdce4478945949b7e69678, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4956594009322858, guid: 752ac9eefbbdce4478945949b7e69678, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4956594009322858, guid: 752ac9eefbbdce4478945949b7e69678, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4956594009322858, guid: 752ac9eefbbdce4478945949b7e69678, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4956594009322858, guid: 752ac9eefbbdce4478945949b7e69678, type: 2}
-      propertyPath: m_RootOrder
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114338760744721096, guid: 752ac9eefbbdce4478945949b7e69678,
-        type: 2}
-      propertyPath: CanLeft
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: 752ac9eefbbdce4478945949b7e69678, type: 2}
-  m_IsPrefabParent: 0
 --- !u!1001 &484459040
 Prefab:
   m_ObjectHideFlags: 0
@@ -196,7 +150,12 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4802589794708424, guid: 9033da5e113b9a44aaaa87b3eb87b3e6, type: 2}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114266717576082752, guid: 9033da5e113b9a44aaaa87b3eb87b3e6,
+        type: 2}
+      propertyPath: Speed
+      value: 1.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9033da5e113b9a44aaaa87b3eb87b3e6, type: 2}
@@ -262,6 +221,7 @@ GameObject:
   - component: {fileID: 518241581}
   - component: {fileID: 518241580}
   - component: {fileID: 518241579}
+  - component: {fileID: 518241583}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -314,6 +274,7 @@ Camera:
   m_TargetEye: 3
   m_HDR: 1
   m_AllowMSAA: 1
+  m_AllowDynamicResolution: 0
   m_ForceIntoRT: 0
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
@@ -331,36 +292,32 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1233061855 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1931011046461230, guid: 752ac9eefbbdce4478945949b7e69678,
-    type: 2}
-  m_PrefabInternal: {fileID: 457129012}
---- !u!61 &1233061856
-BoxCollider2D:
+--- !u!114 &518241583
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1233061855}
+  m_GameObject: {fileID: 518241578}
   m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.01, y: 0.01}
-  m_EdgeRadius: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f70bd4fd04c093469046f68cee3648f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RouterPrefab: {fileID: 1931011046461230, guid: 752ac9eefbbdce4478945949b7e69678,
+    type: 2}
+  Items:
+  - X: -1.5
+    Y: -0.65
+    CanUp: 1
+    CanDown: 1
+    CanRight: 1
+    CanLeft: 0
+  - X: 1.5
+    Y: -0.65
+    CanUp: 1
+    CanDown: 1
+    CanRight: 0
+    CanLeft: 1
 --- !u!1 &1789503553
 GameObject:
   m_ObjectHideFlags: 0
