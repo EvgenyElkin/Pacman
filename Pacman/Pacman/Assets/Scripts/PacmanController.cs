@@ -13,10 +13,11 @@ namespace Assets.Scripts
 
     public class PacmanController : MonoBehaviour
     {
-        private bool CanMove = true;
+        private bool Stopped;
 		private Direction _dir;
 		private Direction _nextDir;
         private Animator _animator;
+		private RouterController _router;
 
         public void Start()
         {
@@ -32,9 +33,17 @@ namespace Assets.Scripts
 			if(other.tag == "Router")
 			{
 				var router = other.gameObject.GetComponent<RouterController>();
+				if(router.CanMove(_nextDir))
+				{
+					ChangeDirection(_nextDir);
+					_nextDir = Direction.None;
+					return;
+				}
 				if(!router.CanMove(_dir))
 				{
-					CanMove = false;
+					Stopped = true;
+					_router = router;
+					return;
 				}
 			}
 		}
@@ -104,13 +113,17 @@ namespace Assets.Scripts
 		
 		public void Update()
         {
-            if(!CanMove)
-			{
-				return;
-			}
 			var inputDir = GetDirectionFromInput();
-
-            if (inputDir != Direction.None && _dir != inputDir)
+            if(Stopped)
+			{
+				if(!_router.CanMove(inputDir))
+				{
+					return;
+				}
+				ChangeDirection(inputDir);
+				Stopped = false;
+			}
+			else if (inputDir != Direction.None && _dir != inputDir)
             {
                 var reverseDir = GetReverseDirection(_dir);
 				if(inputDir == reverseDir)
