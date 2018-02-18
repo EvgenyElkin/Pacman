@@ -150,7 +150,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4802589794708424, guid: 9033da5e113b9a44aaaa87b3eb87b3e6, type: 2}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114266717576082752, guid: 9033da5e113b9a44aaaa87b3eb87b3e6,
         type: 2}
@@ -318,6 +318,378 @@ MonoBehaviour:
     CanDown: 1
     CanRight: 0
     CanLeft: 1
+  - X: -1.5
+    Y: 1.3
+    CanUp: 0
+    CanDown: 1
+    CanRight: 1
+    CanLeft: 0
+  - X: 1.5
+    Y: 1.3
+    CanUp: 0
+    CanDown: 1
+    CanRight: 0
+    CanLeft: 1
+  - X: 0.5
+    Y: 1.3
+    CanUp: 1
+    CanDown: 0
+    CanRight: 1
+    CanLeft: 1
+  - X: -0.5
+    Y: 1.3
+    CanUp: 1
+    CanDown: 0
+    CanRight: 1
+    CanLeft: 1
+  - X: -1.5
+    Y: 0.3
+    CanUp: 1
+    CanDown: 1
+    CanRight: 0
+    CanLeft: 1
+  - X: 1.5
+    Y: 0.3
+    CanUp: 1
+    CanDown: 1
+    CanRight: 1
+    CanLeft: 0
+  - X: -0.5
+    Y: 2.3
+    CanUp: 0
+    CanDown: 1
+    CanRight: 0
+    CanLeft: 1
+  - X: 0.5
+    Y: 2.3
+    CanUp: 0
+    CanDown: 1
+    CanRight: 1
+    CanLeft: 0
+  - X: -1.5
+    Y: 2.3
+    CanUp: 1
+    CanDown: 0
+    CanRight: 1
+    CanLeft: 0
+  - X: 1.5
+    Y: 2.3
+    CanUp: 1
+    CanDown: 0
+    CanRight: 0
+    CanLeft: 1
+  - X: -1.5
+    Y: 3.25
+    CanUp: 0
+    CanDown: 1
+    CanRight: 1
+    CanLeft: 1
+  - X: 1.5
+    Y: 3.25
+    CanUp: 0
+    CanDown: 1
+    CanRight: 1
+    CanLeft: 1
+  - X: -2.4
+    Y: 3.25
+    CanUp: 1
+    CanDown: 1
+    CanRight: 1
+    CanLeft: 1
+  - X: 2.4
+    Y: 3.25
+    CanUp: 1
+    CanDown: 1
+    CanRight: 1
+    CanLeft: 1
+  - X: -4
+    Y: 3.25
+    CanUp: 1
+    CanDown: 1
+    CanRight: 1
+    CanLeft: 0
+  - X: 4
+    Y: 3.25
+    CanUp: 1
+    CanDown: 1
+    CanRight: 0
+    CanLeft: 1
+  - X: -2.4
+    Y: 0.3
+    CanUp: 1
+    CanDown: 1
+    CanRight: 1
+    CanLeft: 1
+  - X: 2.4
+    Y: 0.3
+    CanUp: 1
+    CanDown: 1
+    CanRight: 1
+    CanLeft: 1
+  - X: -4
+    Y: 2.25
+    CanUp: 1
+    CanDown: 0
+    CanRight: 1
+    CanLeft: 0
+  - X: 4
+    Y: 2.25
+    CanUp: 1
+    CanDown: 0
+    CanRight: 0
+    CanLeft: 1
+  - X: -2.4
+    Y: 2.25
+    CanUp: 1
+    CanDown: 1
+    CanRight: 1
+    CanLeft: 1
+  - X: 2.4
+    Y: 2.25
+    CanUp: 1
+    CanDown: 1
+    CanRight: 1
+    CanLeft: 1
+  - X: -2.4
+    Y: 4.5
+    CanUp: 0
+    CanDown: 1
+    CanRight: 1
+    CanLeft: 1
+  - X: 2.4
+    Y: 4.5
+    CanUp: 0
+    CanDown: 1
+    CanRight: 1
+    CanLeft: 1
+  - X: 4
+    Y: 4.5
+    CanUp: 0
+    CanDown: 1
+    CanRight: 0
+    CanLeft: 1
+  - X: -0.5
+    Y: 3.25
+    CanUp: 1
+    CanDown: 0
+    CanRight: 1
+    CanLeft: 1
+  - X: 0.5
+    Y: 3.25
+    CanUp: 1
+    CanDown: 0
+    CanRight: 1
+    CanLeft: 1
+  - X: -4
+    Y: 4.5
+    CanUp: 0
+    CanDown: 1
+    CanRight: 1
+    CanLeft: 0
+  - X: -0.5
+    Y: 4.5
+    CanUp: 0
+    CanDown: 1
+    CanRight: 0
+    CanLeft: 1
+  - X: 0.5
+    Y: 4.5
+    CanUp: 0
+    CanDown: 1
+    CanRight: 1
+    CanLeft: 0
+  - X: -1.45
+    Y: -1.6
+    CanUp: 1
+    CanDown: 0
+    CanRight: 1
+    CanLeft: 1
+  - X: 1.45
+    Y: -1.6
+    CanUp: 1
+    CanDown: 0
+    CanRight: 1
+    CanLeft: 1
+  - X: -0.5
+    Y: -1.6
+    CanUp: 0
+    CanDown: 1
+    CanRight: 0
+    CanLeft: 1
+  - X: 0.5
+    Y: -1.6
+    CanUp: 0
+    CanDown: 1
+    CanRight: 1
+    CanLeft: 0
+  - X: -0.5
+    Y: -2.6
+    CanUp: 1
+    CanDown: 0
+    CanRight: 1
+    CanLeft: 1
+  - X: 0.5
+    Y: -2.6
+    CanUp: 1
+    CanDown: 0
+    CanRight: 1
+    CanLeft: 1
+  - X: -1.45
+    Y: -2.6
+    CanUp: 0
+    CanDown: 1
+    CanRight: 1
+    CanLeft: 1
+  - X: 1.45
+    Y: -2.6
+    CanUp: 0
+    CanDown: 1
+    CanRight: 1
+    CanLeft: 1
+  - X: -2.4
+    Y: -2.6
+    CanUp: 1
+    CanDown: 1
+    CanRight: 1
+    CanLeft: 0
+  - X: 2.4
+    Y: -2.6
+    CanUp: 1
+    CanDown: 1
+    CanRight: 0
+    CanLeft: 1
+  - X: 2.4
+    Y: -1.6
+    CanUp: 1
+    CanDown: 1
+    CanRight: 1
+    CanLeft: 1
+  - X: -2.4
+    Y: -1.6
+    CanUp: 1
+    CanDown: 1
+    CanRight: 1
+    CanLeft: 1
+  - X: -4
+    Y: -1.6
+    CanUp: 0
+    CanDown: 1
+    CanRight: 1
+    CanLeft: 0
+  - X: 4
+    Y: -1.6
+    CanUp: 0
+    CanDown: 1
+    CanRight: 0
+    CanLeft: 1
+  - X: -4
+    Y: -2.6
+    CanUp: 1
+    CanDown: 0
+    CanRight: 1
+    CanLeft: 0
+  - X: 4
+    Y: -2.6
+    CanUp: 1
+    CanDown: 0
+    CanRight: 0
+    CanLeft: 1
+  - X: -3.4
+    Y: -2.6
+    CanUp: 0
+    CanDown: 1
+    CanRight: 0
+    CanLeft: 1
+  - X: 3.4
+    Y: -2.6
+    CanUp: 0
+    CanDown: 1
+    CanRight: 1
+    CanLeft: 0
+  - X: -4
+    Y: -4.5
+    CanUp: 1
+    CanDown: 0
+    CanRight: 1
+    CanLeft: 0
+  - X: 4
+    Y: -4.5
+    CanUp: 1
+    CanDown: 0
+    CanRight: 0
+    CanLeft: 1
+  - X: -0.5
+    Y: -4.5
+    CanUp: 1
+    CanDown: 0
+    CanRight: 1
+    CanLeft: 1
+  - X: 0.5
+    Y: -4.5
+    CanUp: 1
+    CanDown: 0
+    CanRight: 1
+    CanLeft: 1
+  - X: -0.5
+    Y: -3.5
+    CanUp: 0
+    CanDown: 1
+    CanRight: 0
+    CanLeft: 1
+  - X: 0.5
+    Y: -3.5
+    CanUp: 0
+    CanDown: 1
+    CanRight: 1
+    CanLeft: 0
+  - X: -1.45
+    Y: -3.5
+    CanUp: 1
+    CanDown: 0
+    CanRight: 1
+    CanLeft: 0
+  - X: 1.45
+    Y: -3.5
+    CanUp: 1
+    CanDown: 0
+    CanRight: 0
+    CanLeft: 1
+  - X: 4
+    Y: -3.5
+    CanUp: 0
+    CanDown: 1
+    CanRight: 1
+    CanLeft: 0
+  - X: -4
+    Y: -3.5
+    CanUp: 0
+    CanDown: 1
+    CanRight: 0
+    CanLeft: 1
+  - X: -3.35
+    Y: -3.5
+    CanUp: 1
+    CanDown: 0
+    CanRight: 1
+    CanLeft: 1
+  - X: 3.35
+    Y: -3.5
+    CanUp: 1
+    CanDown: 0
+    CanRight: 1
+    CanLeft: 1
+  - X: -2.4
+    Y: -3.5
+    CanUp: 1
+    CanDown: 0
+    CanRight: 0
+    CanLeft: 1
+  - X: 2.4
+    Y: -3.5
+    CanUp: 1
+    CanDown: 0
+    CanRight: 1
+    CanLeft: 0
 --- !u!1 &1789503553
 GameObject:
   m_ObjectHideFlags: 0
@@ -389,5 +761,5 @@ Transform:
   m_LocalScale: {x: 4, y: 4, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
