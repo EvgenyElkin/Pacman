@@ -107,7 +107,7 @@ TextureImporter:
     21300200: main-sprites2_494
     21300202: main-sprites2_536
     21300204: main-sprites2_0
-    21300206: main-sprites2_1
+    21300206: Food
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -169,6 +169,7 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    androidETC2FallbackOverride: 0
   - buildTarget: Standalone
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -178,6 +179,7 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    androidETC2FallbackOverride: 0
   - buildTarget: tvOS
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -187,6 +189,7 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    androidETC2FallbackOverride: 0
   - buildTarget: Android
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -196,6 +199,7 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    androidETC2FallbackOverride: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -1631,7 +1635,7 @@ TextureImporter:
       name: main-sprites2_0
       rect:
         serializedVersion: 2
-        x: 226
+        x: 225
         y: 0
         width: 228
         height: 247
@@ -1642,13 +1646,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: main-sprites2_1
+      name: Food
       rect:
         serializedVersion: 2
-        x: 1
-        y: 0
-        width: 226
-        height: 248
+        x: 171
+        y: 59
+        width: 2
+        height: 2
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}

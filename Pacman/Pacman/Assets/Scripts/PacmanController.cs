@@ -51,7 +51,10 @@ namespace Assets.Scripts
 				var teleport = other.gameObject.GetComponent<TeleportController>();
 				transform.position = new Vector3(teleport.Distination.x, teleport.Distination.y, 0);
 			}
-				
+			if(other.tag == "Food")
+			{
+				other.gameObject.active = false;
+			}
 		}
 		private Direction GetReverseDirection(Direction dir)
 		{
