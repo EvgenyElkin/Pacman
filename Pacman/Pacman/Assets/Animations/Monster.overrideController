@@ -5,6 +5,14 @@ AnimatorOverrideController:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: Mo
-  m_Controller: {fileID: 0}
-  m_Clips: []
+  m_Name: Monster
+  m_Controller: {fileID: 9100000, guid: f96d87f0f99484e488ecb85f52fed948, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: 5e5c1ea05b13b0546baf0eecb17ad1a2, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: b30f3cf0e0f1db343b6d11d62ac1f63c, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 6036fb63450f4b242beaa84d5cee4d22, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 3a24a3c8e8d57b74d82093f538512f5b, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 65bb10bdec478ab4a8d7c5cb5c92d052, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 062b70ec8862554448f14a5439de8f1b, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: c4b44e73391d2764d9f82d229cc1871b, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: b1144c0a155d8a742be0000177d70f7c, type: 2}

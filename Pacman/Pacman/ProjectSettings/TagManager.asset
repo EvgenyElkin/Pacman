@@ -7,6 +7,7 @@ TagManager:
   - Router
   - Teleport
   - Food
+  - Monster
   layers:
   - Default
   - TransparentFX
@@ -52,6 +53,9 @@ TagManager:
     locked: 0
   - name: Characters
     uniqueID: 4022652895
+    locked: 0
+  - name: Player
+    uniqueID: 2680898243
     locked: 0
   - name: Mask
     uniqueID: 3347295999
