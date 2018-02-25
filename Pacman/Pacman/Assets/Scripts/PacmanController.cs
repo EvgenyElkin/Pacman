@@ -13,7 +13,8 @@ namespace Assets.Scripts
 
     public class PacmanController : MonoBehaviour
     {
-        private bool Stopped;
+        private bool Stopped; 
+		private bool IsDead;
 		private Direction _dir;
 		private Direction _nextDir;
         private Animator _animator;
@@ -54,6 +55,11 @@ namespace Assets.Scripts
 			if(other.tag == "Food")
 			{
 				other.gameObject.active = false;
+			}
+			if(other.tag == "Monster" && !IsDead)
+			{
+				_animator.SetTrigger("IsDead");
+				IsDead = true;
 			}
 		}
 		private Direction GetReverseDirection(Direction dir)
@@ -122,6 +128,10 @@ namespace Assets.Scripts
 		
 		public void Update()
         {
+			if(IsDead)
+			{
+				return;
+			}
 			var inputDir = GetDirectionFromInput();
             if(Stopped)
 			{
