@@ -443,6 +443,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   RouterPrefab: {fileID: 1931011046461230, guid: 752ac9eefbbdce4478945949b7e69678,
     type: 2}
+  FoodPrefab: {fileID: 1881361354172622, guid: a3e5d7fb16c184c449c5af3b7d4d1eef, type: 2}
+  FoodInterval: 0.5
   Items:
   - X: -1.5
     Y: -0.65
@@ -796,14 +798,14 @@ MonoBehaviour:
     Y: -3.5
     CanUp: 0
     CanDown: 1
-    CanRight: 1
-    CanLeft: 0
+    CanRight: 0
+    CanLeft: 1
   - X: -4
     Y: -3.5
     CanUp: 0
     CanDown: 1
-    CanRight: 0
-    CanLeft: 1
+    CanRight: 1
+    CanLeft: 0
   - X: -3.35
     Y: -3.5
     CanUp: 1
@@ -973,7 +975,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1789503553}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -0.0016, z: 0}
   m_LocalScale: {x: 4, y: 4, z: 1}
   m_Children: []
   m_Father: {fileID: 0}

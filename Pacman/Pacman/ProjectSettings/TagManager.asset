@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Router
   - Teleport
+  - Food
   layers:
   - Default
   - TransparentFX
