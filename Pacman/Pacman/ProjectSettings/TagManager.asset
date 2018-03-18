@@ -8,6 +8,7 @@ TagManager:
   - Teleport
   - Food
   - Monster
+  - SuperFood
   layers:
   - Default
   - TransparentFX

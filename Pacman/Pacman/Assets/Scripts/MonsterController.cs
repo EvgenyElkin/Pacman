@@ -43,16 +43,20 @@ namespace Assets.Scripts
 			switch (dir)
 			{
 				case Direction.Left:
-					_animator.SetTrigger("IsLeft");
+					_animator.SetInteger("MoveDirection", 1);
+					_animator.SetBool("SuperMode", false);
 					break;
 				case Direction.Up:
-					_animator.SetTrigger("IsUp");
+					_animator.SetInteger("MoveDirection", 2);
+					_animator.SetBool("SuperMode", false);
 					break;
 				case Direction.Right:
-					_animator.SetTrigger("IsRight");
+					_animator.SetInteger("MoveDirection", 3);
+					_animator.SetBool("SuperMode", false);
 					break;
 				case Direction.Down:
-					_animator.SetTrigger("IsDown");
+					_animator.SetInteger("MoveDirection", 4);
+					_animator.SetBool("SuperMode", false);
 					break;
 					
 			}

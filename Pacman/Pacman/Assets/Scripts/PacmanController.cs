@@ -13,13 +13,15 @@ namespace Assets.Scripts
 
     public class PacmanController : MonoBehaviour
     {
-        private bool Stopped; 
+        private bool SuperMode;
+		private int SuperModeTime;
+		private bool Stopped; 
 		private bool IsDead;
 		private Direction _dir;
 		private Direction _nextDir;
         private Animator _animator;
 		private RouterController _router;
-
+		
         public void Start()
         {
             _dir = Direction.Right;
@@ -28,7 +30,8 @@ namespace Assets.Scripts
         }
 
         public float Speed;
-        
+        public int SuperModeTimeDefault;
+		
 		public void OnTriggerEnter2D(Collider2D other)
 		{
 			if(other.tag == "Router")
@@ -56,10 +59,23 @@ namespace Assets.Scripts
 			{
 				other.gameObject.active = false;
 			}
+			if(other.tag == "SuperFood")
+			{
+				other.gameObject.active = false;
+				SuperMode = true;
+				SuperModeTime = SuperModeTimeDefault;
+			}
 			if(other.tag == "Monster" && !IsDead)
 			{
-				_animator.SetTrigger("IsDead");
-				IsDead = true;
+				if(SuperMode) 
+				{
+					other.gameObject.active = false;
+				}
+				else
+				{
+					_animator.SetTrigger("IsDead");
+					IsDead = true;
+				}
 			}
 		}
 		private Direction GetReverseDirection(Direction dir)

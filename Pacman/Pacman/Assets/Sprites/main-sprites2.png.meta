@@ -108,6 +108,7 @@ TextureImporter:
     21300202: main-sprites2_536
     21300204: main-sprites2_0
     21300206: Food
+    21300208: Food2
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -1655,6 +1656,20 @@ TextureImporter:
         height: 2
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Food2
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 56
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
