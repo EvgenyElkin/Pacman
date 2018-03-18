@@ -44,19 +44,23 @@ namespace Assets.Scripts
 			{
 				case Direction.Left:
 					_animator.SetInteger("MoveDirection", 1);
-					_animator.SetBool("SuperMode", false);
+					_animator.SetBool("SuperMode", true);
+					_animator.SetInteger("MoveDirection", 0);
 					break;
 				case Direction.Up:
 					_animator.SetInteger("MoveDirection", 2);
-					_animator.SetBool("SuperMode", false);
+					_animator.SetBool("SuperMode", true);
+					_animator.SetInteger("MoveDirection", 0);
 					break;
 				case Direction.Right:
 					_animator.SetInteger("MoveDirection", 3);
-					_animator.SetBool("SuperMode", false);
+					_animator.SetBool("SuperMode", true);
+					_animator.SetInteger("MoveDirection", 0);
 					break;
 				case Direction.Down:
 					_animator.SetInteger("MoveDirection", 4);
-					_animator.SetBool("SuperMode", false);
+					_animator.SetBool("SuperMode", true);
+					_animator.SetInteger("MoveDirection", 0);
 					break;
 					
 			}
