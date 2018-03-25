@@ -9,7 +9,7 @@ namespace Assets.Scripts
 		private Animator _animator;
 		private System.Random _rand;
 		public float Speed;
-			
+		public bool SuperMode;
 		
 		public void Start()
 		{
@@ -17,7 +17,12 @@ namespace Assets.Scripts
 			_animator = GetComponent<Animator>();
 			_rand = new System.Random();
 		}
+		public void SetSuperMode(bool active)
+		{
+			SuperMode = active;
+			ChangeDirection(_dir);
 			
+		}	
 		private Direction GetNewDirection(RouterController router)
 		{	
 			var dirs = new List<Direction>();
@@ -56,7 +61,7 @@ namespace Assets.Scripts
 					break;
 					
 			}
-		    _animator.SetBool("SuperMode", true);
+		    _animator.SetBool("SuperMode", SuperMode);
         }
         public void OnTriggerEnter2D(Collider2D other)
 		{

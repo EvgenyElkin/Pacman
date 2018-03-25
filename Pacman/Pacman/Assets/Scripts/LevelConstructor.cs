@@ -8,12 +8,10 @@ public class LevelConstructor : MonoBehaviour
     public GameObject RouterPrefab;
 	public GameObject FoodPrefab;
 	public float FoodInterval;
-	
-    public RouterItem[] Items;
     
     public void Start ()
     {
-        foreach (var routerItem in Items)
+        foreach (var routerItem in Level1)
         {
             var router = Instantiate(RouterPrefab, new Vector3(routerItem.X, routerItem.Y, 0f), Quaternion.identity);
             var routerController = router.GetComponent<RouterController>();
@@ -46,6 +44,73 @@ public class LevelConstructor : MonoBehaviour
 				}
 			}
 		}
+		private RouterItem[] Level1 = new []
+		{
+			new RouterItem { X= -1.5f, Y= -0.65f, CanUp=true, CanDown=true, CanRight=true, CanLeft=false},
+			new RouterItem { X= 1.5f, Y= -0.65f, CanUp=true, CanDown=true, CanRight=false, CanLeft=true},
+			new RouterItem { X= -1.5f, Y= 1.3f, CanUp=false, CanDown=true, CanRight=true, CanLeft=false},
+			new RouterItem { X= 1.5f, Y= 1.3f, CanUp=false, CanDown=true, CanRight=false, CanLeft=true},
+			new RouterItem { X=0.5f, Y= 1.3f, CanUp=true, CanDown=false, CanRight=true, CanLeft=true},
+			new RouterItem { X= -0.5f, Y= 1.3f, CanUp=true, CanDown=false, CanRight=true, CanLeft=true},
+			new RouterItem { X= -1.5f, Y=0.3f, CanUp=true, CanDown=true, CanRight=false, CanLeft=true},
+			new RouterItem { X= 1.5f, Y=0.3f, CanUp=true, CanDown=true, CanRight=true, CanLeft=false},
+			new RouterItem { X= -0.5f, Y= 2.3f, CanUp=false, CanDown=true, CanRight=false, CanLeft=true},
+			new RouterItem { X=0.5f, Y= 2.3f, CanUp=false, CanDown=true, CanRight=true, CanLeft=false},
+			new RouterItem { X= -1.5f, Y= 2.3f, CanUp=true, CanDown=false, CanRight=true, CanLeft=false},
+			new RouterItem { X= 1.5f, Y= 2.3f, CanUp=true, CanDown=false, CanRight=false, CanLeft=true},
+			new RouterItem { X= -1.5f, Y= 3.25f, CanUp=false, CanDown=true, CanRight=true, CanLeft=true},
+			new RouterItem { X= 1.5f, Y= 3.25f, CanUp=false, CanDown=true, CanRight=true, CanLeft=true},
+			new RouterItem { X= -2.4f, Y= 3.25f, CanUp=true, CanDown=true, CanRight=true, CanLeft=true},
+			new RouterItem { X= 2.4f, Y= 3.25f, CanUp=true, CanDown=true, CanRight=true, CanLeft=true},
+			new RouterItem { X= -4f, Y= 3.25f, CanUp=true, CanDown=true, CanRight=true, CanLeft=false},
+			new RouterItem { X= 4f, Y= 3.25f, CanUp=true, CanDown=true, CanRight=false, CanLeft=true},
+			new RouterItem { X= -2.4f, Y=0.3f, CanUp=true, CanDown=true, CanRight=true, CanLeft=true},
+			new RouterItem { X= 2.4f, Y=0.3f, CanUp=true, CanDown=true, CanRight=true, CanLeft=true},
+			new RouterItem { X= -4f, Y= 2.25f, CanUp=true, CanDown=false, CanRight=true, CanLeft=false},
+			new RouterItem { X= 4f, Y= 2.25f, CanUp=true, CanDown=false, CanRight=false, CanLeft=true},
+			new RouterItem { X= -2.4f, Y= 2.25f, CanUp=true, CanDown=true, CanRight=true, CanLeft=true},
+			new RouterItem { X= 2.4f, Y= 2.25f, CanUp=true, CanDown=true, CanRight=true, CanLeft=true},
+			new RouterItem { X= -2.4f, Y= 4.5f, CanUp=false, CanDown=true, CanRight=true, CanLeft=true},
+			new RouterItem { X= 2.4f, Y= 4.5f, CanUp=false, CanDown=true, CanRight=true, CanLeft=true},
+			new RouterItem { X= 4f, Y= 4.5f, CanUp=false, CanDown=true, CanRight=false, CanLeft=true},
+			new RouterItem { X= -0.5f, Y= 3.25f, CanUp=true, CanDown=false, CanRight=true, CanLeft=true},
+			new RouterItem { X=0.5f, Y= 3.25f, CanUp=true, CanDown=false, CanRight=true, CanLeft=true},
+			new RouterItem { X= -4, Y= 4.5f, CanUp=false, CanDown=true, CanRight=true, CanLeft=false},
+			new RouterItem { X= -0.5f, Y= 4.5f, CanUp=false, CanDown=true, CanRight=false, CanLeft=true},
+			new RouterItem { X=0.5f, Y= 4.5f, CanUp=false, CanDown=true, CanRight=true, CanLeft=false},
+			new RouterItem { X= -1.45f, Y= -1.6f, CanUp=true, CanDown=false, CanRight=true, CanLeft=true},
+			new RouterItem { X= 1.45f, Y= -1.6f, CanUp=true, CanDown=false, CanRight=true, CanLeft=true},
+			new RouterItem { X= -0.5f, Y= -1.6f, CanUp=false, CanDown=true, CanRight=false, CanLeft=true},
+			new RouterItem { X=0.5f, Y= -1.6f, CanUp=false, CanDown=true, CanRight=true, CanLeft=false},
+			new RouterItem { X= -0.5f, Y= -2.6f, CanUp=true, CanDown=false, CanRight=true, CanLeft=true},
+			new RouterItem { X=0.5f, Y= -2.6f, CanUp=true, CanDown=false, CanRight=true, CanLeft=true},
+			new RouterItem { X= -1.45f, Y= -2.6f, CanUp=false, CanDown=true, CanRight=true, CanLeft=true},
+			new RouterItem { X= 1.45f, Y= -2.6f, CanUp=false, CanDown=true, CanRight=true, CanLeft=true},
+			new RouterItem { X= -2.4f, Y= -2.6f, CanUp=true, CanDown=true, CanRight=true, CanLeft=false},
+			new RouterItem { X= 2.4f, Y= -2.6f, CanUp=true, CanDown=true, CanRight=false, CanLeft=true},
+			new RouterItem { X= 2.4f, Y= -1.6f, CanUp=true, CanDown=true, CanRight=true, CanLeft=true},
+			new RouterItem { X= -2.4f, Y= -1.6f, CanUp=true, CanDown=true, CanRight=true, CanLeft=true},
+			new RouterItem { X= -4f, Y= -1.6f, CanUp=false, CanDown=true, CanRight=true, CanLeft=false},
+			new RouterItem { X= 4f, Y= -1.6f, CanUp=false, CanDown=true, CanRight=false, CanLeft=true},
+			new RouterItem { X= -4f, Y= -2.6f, CanUp=true, CanDown=false, CanRight=true, CanLeft=false},
+			new RouterItem { X= 4f, Y= -2.6f, CanUp=true, CanDown=false, CanRight=false, CanLeft=true},
+			new RouterItem { X= -3.4f, Y= -2.6f, CanUp=false, CanDown=true, CanRight=false, CanLeft=true},
+			new RouterItem { X= 3.4f, Y= -2.6f, CanUp=false, CanDown=true, CanRight=true, CanLeft=false},
+			new RouterItem { X= -4f, Y= -4.5f, CanUp=true, CanDown=false, CanRight=true, CanLeft=false},
+			new RouterItem { X= 4f, Y= -4.5f, CanUp=true, CanDown=false, CanRight=false, CanLeft=true},
+			new RouterItem { X= -0.5f, Y= -4.5f, CanUp=true, CanDown=false, CanRight=true, CanLeft=true},
+			new RouterItem { X=0.5f, Y= -4.5f, CanUp=true, CanDown=false, CanRight=true, CanLeft=true},
+			new RouterItem { X= -0.5f, Y= -3.5f, CanUp=false, CanDown=true, CanRight=false, CanLeft=true},
+			new RouterItem { X=0.5f, Y= -3.5f, CanUp=false, CanDown=true, CanRight=true, CanLeft=false},
+			new RouterItem { X= -1.45f, Y= -3.5f, CanUp=true, CanDown=false, CanRight=true, CanLeft=false},
+			new RouterItem { X= 1.45f, Y= -3.5f, CanUp=true, CanDown=false, CanRight=false, CanLeft=true},
+			new RouterItem { X= 4f, Y= -3.5f, CanUp=false, CanDown=true, CanRight=false, CanLeft=true},
+			new RouterItem { X= -4f, Y= -3.5f, CanUp=false, CanDown=true, CanRight=true, CanLeft=false},
+			new RouterItem { X= -3.35f, Y= -3.5f, CanUp=true, CanDown=false, CanRight=true, CanLeft=true},
+			new RouterItem { X= 3.35f, Y= -3.5f, CanUp=true, CanDown=false, CanRight=true, CanLeft=true},
+			new RouterItem { X= -2.4f, Y= -3.5f, CanUp=true, CanDown=false, CanRight=false, CanLeft=true},
+			new RouterItem { X= 2.4f, Y= -3.5f, CanUp=true, CanDown=false, CanRight=true, CanLeft=false}
+		};
 }
 
 [Serializable]

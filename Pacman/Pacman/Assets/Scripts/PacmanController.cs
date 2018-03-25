@@ -64,6 +64,12 @@ namespace Assets.Scripts
 				other.gameObject.active = false;
 				SuperMode = true;
 				SuperModeTime = SuperModeTimeDefault;
+				var monsters =  GameObject.FindGameObjectsWithTag("Monster");
+				foreach(var monster in monsters)
+				{
+					var monsterController = monster.GetComponent<MonsterController>();
+					monsterController.SetSuperMode(true);
+				}
 			}
 			if(other.tag == "Monster" && !IsDead)
 			{
@@ -144,6 +150,17 @@ namespace Assets.Scripts
 		
 		public void Update()
         {
+			SuperModeTime--;
+			if(SuperModeTime == 0)
+			{
+				SuperMode = false;
+				var monsters =  GameObject.FindGameObjectsWithTag("Monster");
+				foreach(var monster in monsters)
+				{
+					var monsterController = monster.GetComponent<MonsterController>();
+					monsterController.SetSuperMode(false);
+				}
+			}
 			if(IsDead)
 			{
 				return;
@@ -190,3 +207,11 @@ namespace Assets.Scripts
         }
     }
 }
+
+//Проблемы:
+//Нет счета, кол-ва жизней
+//Монстр не возвращается в жилище
+//Не сделано жилище
+//Кривые роутеры, текстуры
+//Не расставлена еда
+//
