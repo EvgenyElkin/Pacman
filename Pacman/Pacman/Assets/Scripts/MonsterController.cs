@@ -44,34 +44,29 @@ namespace Assets.Scripts
 			{
 				case Direction.Left:
 					_animator.SetInteger("MoveDirection", 1);
-					_animator.SetBool("SuperMode", true);
-					_animator.SetInteger("MoveDirection", 0);
 					break;
 				case Direction.Up:
 					_animator.SetInteger("MoveDirection", 2);
-					_animator.SetBool("SuperMode", true);
-					_animator.SetInteger("MoveDirection", 0);
 					break;
 				case Direction.Right:
 					_animator.SetInteger("MoveDirection", 3);
-					_animator.SetBool("SuperMode", true);
-					_animator.SetInteger("MoveDirection", 0);
 					break;
 				case Direction.Down:
 					_animator.SetInteger("MoveDirection", 4);
-					_animator.SetBool("SuperMode", true);
-					_animator.SetInteger("MoveDirection", 0);
 					break;
 					
 			}
-		}
-		public void OnTriggerEnter2D(Collider2D other)
+		    _animator.SetBool("SuperMode", true);
+        }
+        public void OnTriggerEnter2D(Collider2D other)
 		{
 			if(other.tag == "Router")
 			{
 				var router = other.gameObject.GetComponent<RouterController>();
 				_dir = GetNewDirection(router);
-				return;
+			    ChangeDirection(_dir);
+
+                return;
 			}
 			if(other.tag == "Teleport")
 			{
