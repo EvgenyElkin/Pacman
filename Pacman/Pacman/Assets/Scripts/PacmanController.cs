@@ -21,6 +21,7 @@ namespace Assets.Scripts
 		private Direction _nextDir;
         private Animator _animator;
 		private RouterController _router;
+		private int _score;
 		
         public void Start()
         {
@@ -31,7 +32,12 @@ namespace Assets.Scripts
 
         public float Speed;
         public int SuperModeTimeDefault;
+		public GUIText ScoreText;
 		
+		public void UpdateScore()
+		{
+		ScoreText.text = "Score: " + _score;	
+		}
 		public void OnTriggerEnter2D(Collider2D other)
 		{
 			if(other.tag == "Router")
@@ -58,6 +64,7 @@ namespace Assets.Scripts
 			if(other.tag == "Food")
 			{
 				other.gameObject.active = false;
+				_score+=10;
 			}
 			if(other.tag == "SuperFood")
 			{
@@ -70,12 +77,14 @@ namespace Assets.Scripts
 					var monsterController = monster.GetComponent<MonsterController>();
 					monsterController.SetSuperMode(true);
 				}
+				_score+=50;
 			}
 			if(other.tag == "Monster" && !IsDead)
 			{
 				if(SuperMode) 
 				{
 					other.gameObject.active = false;
+					_score+=100;
 				}
 				else
 				{
@@ -204,6 +213,7 @@ namespace Assets.Scripts
                     break;
             }
             transform.position = Vector3.MoveTowards(transform.position, transform.position + directionVector, Speed * Time.deltaTime);
+			UpdateScore();
         }
     }
 }
