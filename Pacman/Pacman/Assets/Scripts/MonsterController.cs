@@ -8,14 +8,24 @@ namespace Assets.Scripts
 		private Direction _dir;
 		private Animator _animator;
 		private System.Random _rand;
+		private Vector3 _defaultPosition;
+		private int _respawnTime;
 		public float Speed;
 		public bool SuperMode;
-		
+		public int RespawnTimeDefault;
+
 		public void Start()
 		{
 			_dir = Direction.Right;
 			_animator = GetComponent<Animator>();
 			_rand = new System.Random();
+			_defaultPosition = transform.position;
+		}
+		public void Respawn()
+		{
+			//gameObject.active = false;
+			_respawnTime = RespawnTimeDefault;
+			transform.position = _defaultPosition;
 		}
 		public void SetSuperMode(bool active)
 		{
@@ -81,6 +91,10 @@ namespace Assets.Scripts
 		}
 		public void Update()
 		{
+			if(_respawnTime-- > 0)
+			{
+				return;
+			}
 			var directionVector = Vector3.zero;
 			switch (_dir)
 			{

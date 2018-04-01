@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 
 namespace Assets.Scripts
 {
@@ -22,21 +23,29 @@ namespace Assets.Scripts
         private Animator _animator;
 		private RouterController _router;
 		private int _score;
+		private int _lives;
+		private int _deathTimes;
 		
         public void Start()
         {
             _dir = Direction.Right;
             _animator = GetComponent<Animator>();
 			_nextDir = Direction.None;
+			_lives = LiveCountDefault;
         }
 
         public float Speed;
         public int SuperModeTimeDefault;
-		public GUIText ScoreText;
+		public Text ScoreText;
+		public int LiveCountDefault;
+		public Text LivesText;
+		public int DeathTimesDefault;
+		public Text GameOverText;
 		
-		public void UpdateScore()
+		public void UpdateUI()
 		{
-		ScoreText.text = "Score: " + _score;	
+			ScoreText.text = "Score: " + _score;
+			LivesText.text = "Lives: " + _lives;		
 		}
 		public void OnTriggerEnter2D(Collider2D other)
 		{
@@ -83,14 +92,18 @@ namespace Assets.Scripts
 			{
 				if(SuperMode) 
 				{
-					other.gameObject.active = false;
 					_score+=100;
+					var monster = other.gameObject.GetComponent<MonsterController>();
+					monster.Respawn();
 				}
 				else
 				{
 					_animator.SetTrigger("IsDead");
 					IsDead = true;
+					_lives--;
+					_deathTimes = DeathTimesDefault;
 				}
+				
 			}
 		}
 		private Direction GetReverseDirection(Direction dir)
@@ -159,6 +172,7 @@ namespace Assets.Scripts
 		
 		public void Update()
         {
+			UpdateUI();
 			SuperModeTime--;
 			if(SuperModeTime == 0)
 			{
@@ -172,6 +186,19 @@ namespace Assets.Scripts
 			}
 			if(IsDead)
 			{
+				_deathTimes--;
+				if(_deathTimes == 0)
+				{
+					if(_lives == -1) 
+					{
+						GameOverText.gameObject.active = true;
+						gameObject.active = false;
+						return;
+					}
+					IsDead = false;
+					ChangeDirection(Direction.Right);
+					transform.position = new Vector3(0f, -0.65f, 0f);
+				}
 				return;
 			}
 			var inputDir = GetDirectionFromInput();
@@ -213,7 +240,6 @@ namespace Assets.Scripts
                     break;
             }
             transform.position = Vector3.MoveTowards(transform.position, transform.position + directionVector, Speed * Time.deltaTime);
-			UpdateScore();
         }
     }
 }

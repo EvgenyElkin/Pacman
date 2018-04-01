@@ -80,7 +80,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.16, y: 0.16}
+    oldSize: {x: 0.13, y: 0.13}
     newSize: {x: 0.34, y: 0.32}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -119,6 +119,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Speed: 1.5
   SuperModeTimeDefault: 800
+  ScoreText: {fileID: 0}
+  LiveCountDefault: 1
+  LivesText: {fileID: 0}
+  DeathTimesDefault: 100
+  GameOverText: {fileID: 0}
 --- !u!212 &212240398143098068
 SpriteRenderer:
   m_ObjectHideFlags: 1
