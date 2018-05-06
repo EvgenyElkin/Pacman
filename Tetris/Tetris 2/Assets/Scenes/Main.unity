@@ -113,53 +113,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1001 &652667407
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4700419694892572, guid: 016102f84ea744941aa0acfbd45bce2d, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4700419694892572, guid: 016102f84ea744941aa0acfbd45bce2d, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 4.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4700419694892572, guid: 016102f84ea744941aa0acfbd45bce2d, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0.010348609
-      objectReference: {fileID: 0}
-    - target: {fileID: 4700419694892572, guid: 016102f84ea744941aa0acfbd45bce2d, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4700419694892572, guid: 016102f84ea744941aa0acfbd45bce2d, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4700419694892572, guid: 016102f84ea744941aa0acfbd45bce2d, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4700419694892572, guid: 016102f84ea744941aa0acfbd45bce2d, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4700419694892572, guid: 016102f84ea744941aa0acfbd45bce2d, type: 2}
-      propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114466456197379060, guid: 016102f84ea744941aa0acfbd45bce2d,
-        type: 2}
-      propertyPath: Period
-      value: 20
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: 016102f84ea744941aa0acfbd45bce2d, type: 2}
-  m_IsPrefabParent: 0
 --- !u!1 &1409049494
 GameObject:
   m_ObjectHideFlags: 0
@@ -260,3 +213,14 @@ MonoBehaviour:
   Figures:
   - {fileID: 1014120975614144, guid: 3da9c2731ee09f743a3a52a5a4fcea27, type: 2}
   - {fileID: 1565797156554104, guid: 016102f84ea744941aa0acfbd45bce2d, type: 2}
+  - {fileID: 1089519931735358, guid: ef8ad268cd97c664cb6ccc0a5133804d, type: 2}
+  - {fileID: 1605419227959098, guid: 428e0fb1cb5dd074984dbda2e2ef4103, type: 2}
+  - {fileID: 1951730072018138, guid: e8a3e0c7a7a8f19498228865c62ef910, type: 2}
+  - {fileID: 1289224476737872, guid: 68da1a18ae279eb40a0d939ac417908b, type: 2}
+  - {fileID: 1872660285108422, guid: d33222d39e04bde48b4b47958abac471, type: 2}
+  - {fileID: 1927520126820838, guid: f46d5e68883f3cd47b70765e94f861e3, type: 2}
+  - {fileID: 1026333215572388, guid: 27107a2ec5e61ff4fb22a2ea0e655dc9, type: 2}
+  - {fileID: 1874778682736798, guid: 876431d782f3c45449391b57a9e4819e, type: 2}
+  - {fileID: 1801919029045304, guid: e4f7d79c170307f41b2b99810a2351ac, type: 2}
+  - {fileID: 1586792226477682, guid: f0fb90d6124dd194fa302f2f020b33f8, type: 2}
+  Block: {fileID: 1610908877162466, guid: d4b11e8b34224304f8870ed854cef106, type: 2}
