@@ -11,16 +11,16 @@ public class FigureController : MonoBehaviour
 	
 	private int _counter;
 	private GameController _game;
-	private int _x;
-	private int _y;
+	public int _x;
+	public int _y;
 	
 	public void SetGameController(GameController game)
 	{
 		_game = game;
-		_x = 6;
+		_x = 0;
 		_y = 0;
 	}
-	public void Start()
+	public void Awake()
 	{
 		switch(Type)
 		{

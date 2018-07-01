@@ -23,11 +23,11 @@ public class GameController : MonoBehaviour
 	}
 	public bool CanMove(FigureController figure, int x, int y)
 	{
-		if(x + figure.Form.GetLength(0) > Width || x < 0)
+		if(x + figure.Form.GetLength(1) > Width || x < 0)
 		{
 			return false;
 		}
-		if(y + figure.Form.GetLength(1) > Height || y < 0)
+		if(y + figure.Form.GetLength(0) > Height || y < 0)
 		{
 			return false;
 		}
@@ -35,13 +35,13 @@ public class GameController : MonoBehaviour
 	}
 	public void Destroy(FigureController figure, int x, int y)
 	{
-		for(var j = 0; j < figure.Form.GetLength(1); j++)
+		for(var j = 0; j < figure.Form.GetLength(0); j++)
 		{
-			for(var i = 0; i < figure.Form.GetLength(0); i++)
+			for(var i = 0; i < figure.Form.GetLength(1); i++)
 			{
-				if(figure.Form[i, j])
+				if(figure.Form[j, i])
 				{
-					Instantiate(Block, new Vector3(SpawnX + x + i, SpawnY - y - j, 0), Quaternion.identity);
+					Instantiate(Block, Transform( new Vector3(SpawnX + x + i, SpawnY - y - j, 0)), Quaternion.identity);
 				}
 			}
 		}
@@ -51,7 +51,17 @@ public class GameController : MonoBehaviour
 	private void CreateFigure()
 	{
 		var figurePrefab = Figures[_rand.Next(Figures.Length)];
-		var figure = Instantiate(figurePrefab, new Vector3(SpawnX, SpawnY, 0), Quaternion.identity);
+		var controller = figurePrefab.GetComponent<FigureController>();
+		controller.Awake();
+		var figure = Instantiate(figurePrefab,Transform(controller, new Vector3(SpawnX, SpawnY, 0)), Quaternion.identity);
 		figure.GetComponent<FigureController>().SetGameController(this);
+	}
+	private Vector3 Transform(FigureController figure, Vector3 position)
+	{
+		return new Vector3(position.x + figure.Form.GetLength(1)/2f, position.y + figure.Form.GetLength(0)/2f, 0);
+	}
+	private Vector3 Transform(Vector3 position)
+	{
+		return new Vector3(position.x + 0.5f, position.y + 0.5f, 0);
 	}
 }
